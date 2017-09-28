@@ -41,6 +41,7 @@ namespace TripPlannerPOC
                 {
                     case "Chrome":
                         this.driver = new ChromeDriver();
+                        this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Convert.ToInt16(ConfigurationManager.AppSettings["DefaultTimeoutSec"]));
                         InitPageObjectModels(this.driver);
                         break;
 
